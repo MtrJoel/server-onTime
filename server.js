@@ -19,8 +19,8 @@ app.use('/api', require('./routes/authRoutes'));
 mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅ Conectado a MongoDB');
-    app.listen(PORT, () => {
-      console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+    app.listen(process.env.PORT, () => {
+      console.log(`🚀 Servidor corriendo en http://localhost:${process.env.PORT}`);
     });
   })
   .catch(err => console.error('❌ Error al conectar con MongoDB', err));
