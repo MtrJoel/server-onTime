@@ -16,10 +16,10 @@ app.use(express.json());
 
 app.use('/api', require('./routes/authRoutes'));
 
-mongoose.connect(PORT)
+mongoose.connect(process.env.MONGO_URI)
   .then(() => {
     console.log('✅ Conectado a MongoDB');
-    app.listen(process.env.PORT, () => {
+    app.listen(PORT, () => {
       console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
     });
   })
