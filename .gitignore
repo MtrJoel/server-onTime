@@ -1,0 +1,33 @@
+# 🧱 Dependencias (se regeneran con npm install)
+node_modules/
+
+# 🔐 Variables sensibles
+.env
+
+# 🧹 Archivos del sistema
+.DS_Store
+Thumbs.db
+
+# 🧪 Logs y archivos temporales
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# ⚙️ Otros entornos
+.vscode/
+.idea/
+*.swp
+
+# 🚀 Render o deployment local
+.build/
+dist/
+
+# ⚠️ Archivos generados por sistemas de control de versiones
+*.tgz
+*.zip
+*.gz
+
+# 📄 MongoDB archivos locales (si trabajas con Mongo en local)
+dump/
