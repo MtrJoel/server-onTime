@@ -1,7 +1,8 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
-const Ficha = require('./models/fichas')
+const Ficha = require('./models/fichas');
+const userRoutes = require('./routes/userRoutes');
 // require('dotenv').config();
 
 if (process.env.NODE_ENV !== 'production') {
@@ -17,7 +18,7 @@ app.use(express.json());
 
 app.use('/api', require('./routes/authRoutes'));
 app.use('/api/fichas', require('./routes/routesDrivers'));
-
+app.use('/api/usuarios', userRoutes);
 
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
@@ -28,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
         ficha: 'F-09',
         name: 'Name of Driver',
         location: 'San Cristobal',
-        school: 'nnnnnn'
+        schools: { institute: 'Escuela N1', amount: 120 }
           
         
       });
